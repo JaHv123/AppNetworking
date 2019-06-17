@@ -56,7 +56,9 @@ public class MainActivity extends AppCompatActivity {
             try {
                 socket = new Socket(HOST, 80);
 
-                PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()) );
+                Log.d("mensajes","Enviando requerimiento");
+
+                PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()),true );
                 pw.println(HTTP_GET_REQUEST);
 
                 data = leerCadena(socket.getInputStream());
@@ -91,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             }
-            Log.d("mensajes","FIn del Do");
+            Log.d("mensajes","Fin del do");
             return datos.toString();
 
 
